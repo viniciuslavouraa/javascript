@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcula troco</title>
+    <style>
+        input {
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+        p {
+            margin: 0;
+            padding: 0;
+        }
+        #compra {
+            display: block;
+            padding: 10px;
+            margin: 0 10px 0 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculando o Troco</h1>
+        <p>Qual produto deseja?</p>
+        <input type="text" name="" id="produto"> <br>
+        <p>Qual valor do produto?</p>
+        <input type="number" name="" id="preço"> <br>
+        <p>Com quanto você irá pagar?</p>
+        <input type="number" name="" id="valor"> <br>
+        <input type="button" value="Comprar" id="compra">
+    <div>
+        <h2>Comprovante</h2>
+        <p id="comprovante"></p>
+        
+    </div>
+    <script>
+        var c = document.getElementById('compra')
+        c.addEventListener('click', comprar)
+        function comprar() {
+            var item = document.getElementById('produto')
+            var preço = document.getElementById('preço')
+            var valor = document.getElementById('valor')
+            var n1 = Number(preço.value)
+            var n2 = Number(valor.value)
+            var troco = n2 - n1
+            var comprovante = document.getElementById('comprovante')
+            comprovante.innerText = `Valor do ${item.value}: ${preço.value}
+             Valor pago: ${valor.value} 
+             Troco: ${troco} `
+        }
+    </script>
+</body>
+</html>
