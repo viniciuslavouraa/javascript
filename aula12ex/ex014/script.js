@@ -6,7 +6,11 @@ function carregar() {
     var minuto = new Date()
     var min = minuto.getMinutes()
     msg.innerHTML = `Agora são ${hora}:${min}<br> `
-    if (hora >= 0 && hora < 12) {
+    if (hora >= 0 && hora <=4) {
+        msg.innerHTML += 'tenha uma boa madrugada !'
+        img.src = 'images/madrugada-p.jpg'
+        document.body.style.background = '#130d03'
+    }else if (hora >= 5 && hora < 12) {
         msg.innerHTML += 'tenha um bom dia !'
         img.src= 'images/manha-p.jpg'
         document.body.style.background = '#ffe683'
