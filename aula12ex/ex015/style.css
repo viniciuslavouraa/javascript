@@ -1,0 +1,65 @@
+@charset "UTF-8";
+
+body {
+    background-color: #2894EB;
+    font: normal normal 1em Arial, Helvetica, sans-serif;
+}
+
+header {
+    color: white;
+    text-align: center;
+    text-shadow: 2px 2px 1px #000000bb;
+}
+
+section {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin: auto;
+    width: 400px;
+    box-shadow: 5px 5px 5px #00000070;
+}
+
+div {
+    text-align: center;
+    padding: 5px;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#nasc-box {
+    display: flex;
+    flex-direction: column;
+}
+label {
+    margin-bottom: 5px;
+}
+#masc, #fem {
+    margin-top: -5px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#sex-box {
+    display: flex;
+}
+#botao {
+    padding: 8px;
+}
+#res > #imagem{
+    display: block;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: auto;
+    padding: 10px;
+}
+
+footer {
+    color: white;
+    text-align: center;
+    font-style: italic;
+    text-shadow: 1px 1px 1px #000000be;
+}
