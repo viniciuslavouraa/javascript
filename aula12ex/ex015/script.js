@@ -1,4 +1,5 @@
-
+var btn = document.querySelector('#botao')
+btn.addEventListener('click', verificar)
 
 function verificar() {
     var data = new Date()
@@ -9,7 +10,7 @@ function verificar() {
     var img = document.createElement('img')
     img.setAttribute ('id', 'imagem')
 
-    if (nasc <= 1000 || nasc > ano) {
+    if (nasc.value <= 1000 || nasc.value > ano) {
         res.innerHTML = `Digite um ano válido, ${nasc} não é um ano válido` 
     }
     else {
