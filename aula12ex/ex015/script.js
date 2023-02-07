@@ -1,6 +1,5 @@
-var btn = document.querySelector('#botao')
+var btn =  document.querySelector ('#botao')
 btn.addEventListener('click', verificar)
-
 function verificar() {
     var data = new Date()
     var ano = data.getFullYear()
