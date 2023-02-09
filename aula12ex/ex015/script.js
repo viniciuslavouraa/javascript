@@ -9,14 +9,13 @@ function verificar() {
     var img = document.createElement('img')
     img.setAttribute ('id', 'imagem')
 
-    if (nasc.value <= 1000 || nasc.value > ano) {
+    if (nasc <= 1000 || nasc > ano) {
         res.innerHTML = `Digite um ano válido, ${nasc} não é um ano válido` 
     }
     else {
         var fsex = document.getElementsByName('sexo')
         var idade = ano - nasc
         var genero = ''
-        var image = document.querySelector ('#image')
         if (fsex[0].checked) {
             genero = 'Homem'
             if (idade >= 1 && idade <=10) {
