@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #contador {
+            display: flex;
+            background-color: #00000057;
+            flex-direction: column;
+            align-items: center;
+            width: 300px;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        label {
+            letter-spacing: 1.2px;
+            margin-bottom: -2px;
+            font-size: 1.2em;
+        }
+        input#number {
+            background-color: transparent;
+            width: 200px;
+            outline: 0;
+            border: 1px solid black;
+            border-top: 0 solid transparent;
+            border-radius: 0 0 10px 5px;
+            box-shadow: 3px 2px 2.5px #0000005b;
+        }
+        button {
+            margin-top: 8px;
+            background-color: transparent;
+            border: 1px solid black;
+            border-radius: 5px;
+            width: 100px;
+            height: 30px;
+        }
+        button:hover {
+            box-shadow: 3px 2px 2.5px #0000005b;
+        }
+        #res {
+            width: 200px;
+            position: relative;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="contador">
+        <label for="number">Digite um número</label>
+        <input type="number" name="number" id="number">
+        <button id="botao">Contar</button>
+        <div id="res"> </div>
+    </div>
+    <script>
+        var txtn = document.querySelector ('#number')
+        var res = document.querySelector ('#res')
+        var botao = document.querySelector ('#botao')
+        botao.addEventListener ('click', contar)
+        function contar () {
+            var n = Number(txtn.value)
+            var c = 0
+            do {
+                c++
+                res.innerHTML += `Número ${c}<br>`
+                
+            } while (c != n);
+            res.innerHTML += `Seu número é o ${c}`
+        }
+    </script>
+</body>
+</html>
