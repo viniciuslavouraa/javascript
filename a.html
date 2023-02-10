@@ -50,7 +50,9 @@
             margin-top: 10px;
             text-align: center;
         }
-
+        #resp {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -58,7 +60,10 @@
         <label for="number">Digite um número</label>
         <input type="number" name="number" id="number">
         <button id="botao">Contar</button>
-        <div id="res"> </div>
+        <span id="res"></span>
+        <span id="resp">
+            <button id="sim">Sim</button> <button id="nao">Não</button>
+        </span>
     </div>
     <script>
         var txtn = document.querySelector ('#number')
@@ -67,13 +72,18 @@
         botao.addEventListener ('click', contar)
         function contar () {
             var n = Number(txtn.value)
-            var c = 0
+            var c =1
+            var resp = document.querySelector ('#resp')
+            var sim = document.querySelector ('#sim')
+            var nao = document.querySelector ('#nao')
             do {
-                c++
-                res.innerHTML += `Número ${c}<br>`
-                
+                if (c != n) {
+                    res.innerHTML = 'errado'
+                    resp.style.display = 'block'
+                } else {
+                    
+                }
             } while (c != n);
-            res.innerHTML += `Seu número é o ${c}`
         }
     </script>
 </body>
