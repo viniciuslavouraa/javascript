@@ -72,18 +72,24 @@
         botao.addEventListener ('click', contar)
         function contar () {
             var n = Number(txtn.value)
-            var c =1
+            var c = 0
             var resp = document.querySelector ('#resp')
             var sim = document.querySelector ('#sim')
             var nao = document.querySelector ('#nao')
-            do {
-                if (c != n) {
-                    res.innerHTML = 'errado'
-                    resp.style.display = 'block'
-                } else {
-                    
-                }
-            } while (c != n);
+            sim.addEventListener ('click', confirmar)
+            nao.addEventListener ('clikc', continuar)
+            function continuar () {
+                res.innerHTML = 'Esse é seu número?'
+                resp.style.display = 'block'
+            }
+            function confirmar() {
+                nao.style.display = 'none'
+            }
+            if (c != n) {
+                continuar()
+            } else if (c == n) {
+                confirmar()
+            }
         }
     </script>
 </body>
