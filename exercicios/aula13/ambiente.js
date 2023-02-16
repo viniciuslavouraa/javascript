@@ -1,11 +1,17 @@
-var c = 0
-var num = 8
+for (c = 0 ; c <= 5; c++) {
+    console.log (`passo  ${c}`)
+}
 
+
+
+/*var c = 0
+var num = 8
 do {
     c++
     console.log ( `Número ${c}`)
 } while ( c != num);
 console.log ( `Seu número é o ${c}`)
+*/
 /*var c = 1
 do {
     console.log (`passo ${c}`)
