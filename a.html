@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Eu sou...</h2>
+            <button id="btn-m">Homem</button>
+            <button id="btn-f">Mulher</button>
+
+    <p id="res"></p>
+    <script>
+        var btn_m = document.querySelector ('#btn-m')
+        var btn_f = document.querySelector ('#btn-f')
+        var btn = document.querySelector ('#btn')
+        var res = document.querySelector ('#res')
+        btn_m.addEventListener ('click',homem)
+        btn_f.addEventListener ('click', mulher)
+        function homem () {
+            btn_f.style.display = 'none'
+            btn_m.style.display = 'none'
+           var genero = 'homem'
+           res.innerHTML = `Eu sou um ${genero}`
+        }
+        function mulher () {
+            btn_f.style.display = 'none'
+            btn_m.style.display = 'none'
+           var genero = 'mulher'
+           res.innerHTML = `Eu sou uma ${genero}`
+        }
+    </script>
+</body>
+</html>
