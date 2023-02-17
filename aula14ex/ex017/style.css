@@ -20,6 +20,13 @@ section {
     box-shadow: 5px 5px 5px #00000070;
 }
 
+#tabuada {
+    width: 160px;
+    height: 100px;
+    overflow-y: auto;
+}
+
+
 footer {
     color: white;
     text-align: center;

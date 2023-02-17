@@ -20,6 +20,24 @@ section {
     box-shadow: 5px 5px 5px #00000070;
 }
 
+.contador {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+}
+
+input#inicio, input#fim, input#passo {
+    background-color: transparent;
+    padding: 2px;
+    border-top: 0;
+    border-left: 0 ;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    outline: 0;
+    text-align: center;
+}
+
 footer {
     color: white;
     text-align: center;
