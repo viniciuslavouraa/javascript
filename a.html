@@ -6,30 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
-    <h2>Eu sou...</h2>
-            <button id="btn-m">Homem</button>
-            <button id="btn-f">Mulher</button>
+<body onload="carregar()">
 
-    <p id="res"></p>
     <script>
-        var btn_m = document.querySelector ('#btn-m')
-        var btn_f = document.querySelector ('#btn-f')
-        var btn = document.querySelector ('#btn')
-        var res = document.querySelector ('#res')
-        btn_m.addEventListener ('click',homem)
-        btn_f.addEventListener ('click', mulher)
-        function homem () {
-            btn_f.style.display = 'none'
-            btn_m.style.display = 'none'
-           var genero = 'homem'
-           res.innerHTML = `Eu sou um ${genero}`
-        }
-        function mulher () {
-            btn_f.style.display = 'none'
-            btn_m.style.display = 'none'
-           var genero = 'mulher'
-           res.innerHTML = `Eu sou uma ${genero}`
+        function carregar () {
+            var div = document.createElement ('div')
+            div.style.backgroundColor = 'black'
+            div.style.width = '100px'
+            div.style.height = '100px'
+            document.body.appendChild (div)
         }
     </script>
 </body>
