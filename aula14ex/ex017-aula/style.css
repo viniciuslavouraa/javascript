@@ -23,10 +23,8 @@ div {
     margin-bottom: 10px;
 }
 
-#tabuada {
-    width: 160px;
-    height: 100px;
-    overflow-y: auto;
+select#seltab {
+    padding: 10px 10px 10px 3px;
 }
 
 #res {
