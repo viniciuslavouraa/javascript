@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" />
+    <button id="exemplo">Salvar medicamento</button>
+    <script>
+        var campo = document.querySelector("input")
+var but = document.querySelector("button")
+var medicamentos = [];
+
+but.onclick = function(){
+    medicamentos.push(campo.value);
+    console.log(medicamentos);
+}
+    </script>
+</body>
+</html>
