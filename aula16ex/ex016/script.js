@@ -16,18 +16,22 @@ function adicionar() {
         res.innerHTML = ''
         var opt = document.createElement('option')
         opt.text = `Valor ${num} adicionado`
-        nums.push(num)
+        nums.push(Number(num))
         valores.appendChild(opt) 
     }
 }
 
 let btn_f = document.querySelector('#btn-f')
-let txnum = document.querySelector('#numero')
-let num = Number(txnum.value)
 let res = document.querySelector('#res')
 btn_f.addEventListener('click',calcular)
 
 function calcular() {
+    let txnum = document.querySelector('#numero')
+    let num = Number(txnum.value)
+    if(num == '' || num == 0 || num > 100) {
+        res.innerHTML = ''
+        erro.innerHTML = 'Nenhum valor foi digitado, insira um valor entre 1 e 100 '
+    }else {
     let soma = 0
     for(let i = 0 ; i < nums.length ; i++) { //calcula os valores da array
         soma += nums[i]
@@ -41,6 +45,7 @@ function calcular() {
     res.innerHTML += `<p>O menor valor informado foi ${menor}</p>`
     res.innerHTML += `<p>Somando todos os valores, temos ${soma}</p>`
     res.innerHTML += `<p>A média dos valores digitados é ${media.toFixed(0)}</p>`
+}
 }
 
 /* adicionar valores no select
