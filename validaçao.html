@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="user">Username:</label>
+    <input type="text" name="user" id="user">
+    <label for="senha">Senha:</label>
+    <input type="password" name="senha" id="senha">
+    <button type="button" id="btn">Login</button>
+    <script>
+        let btn = document.querySelector('#btn')
+        btn.addEventListener('click', () => {
+            let login = {user: document.querySelector('#user'), senha: document.querySelector('#senha')}
+            console.log(login.user.value, login.senha.value)
+            login.user.style.borderRadius = ''
+            login.senha.style.borderRadius = ''
+            function validation(u, s) {
+                if (u.length < 8 && s.length < 8) {
+                    login.user.style.border = '1px solid red'
+                    login.senha.style.border = '1px solid red'
+                } 
+                if (u.length >= 8 && s.length < 8) {
+                    login.user.style.border = '1px solid green'
+                    login.user.style.borderRadius = '10px'
+                    login.senha.style.border = '1px solid red'
+                   
+                }
+                if (u.length < 8 && s.length >= 8) {
+                    login.user.style.border = '1px solid red'
+                    login.senha.style.border = '1px solid green'
+                    login.senha.style.borderRadius = '10px'
+                } else if (u.length >= 8 && s.length >= 8) {
+                    login.user.style.border = '1px solid green'
+                    login.user.style.borderRadius = '10px'
+                    login.senha.style.border = '1px solid green'
+                    login.senha.style.borderRadius = '10px'
+                }
+               
+            }
+            validation(login.user.value, login.senha.value)
+        })
+    </script>
+</body>
+</html>
