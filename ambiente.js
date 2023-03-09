@@ -1,16 +1,14 @@
-function soma(num1= 0 , num2= 0 ) {
-    return item = num1 + num2
-    
+class Person {
+    constructor(firstName, lastName, dob) {
+        this.firstName = firstName
+        this.lastName = lastName
+        this.dob = new Date(dob)
+    }
+    getBirthYear() {
+        return this.dob.getFullYear()
+    }
 }
-soma()
-if (item == 0) {
-    soma(2, 2)
-}
-console.log(item)
-
-
-
-
-
+const person1 =  new Person('Vinicius', 'Lavoura', '22-03-2001')
+console.log(person1.getBirthYear())
     
 
