@@ -1,29 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .img {
+            width: 200px;
+            height: 200px;
+            border-radius: 15px;
+        }
+    </style>
 </head>
 <body>
+    <img src="" alt="">
     <script>
-        const url ='https://pokeapi.co/api/v2/ability/?limit=20&offset=20'
+        const url ='https://rickandmortyapi.com/api/character'
 
-        async function getAllPokemons() {
-            const response = await fetch(url)
-            console.log(response)
 
-            const data = await response.json()
-            console.log(data)
 
-            data.results.forEach((power) => {
-                const names = document.createElement('p')
-                names.textContent = power.name
-                document.body.appendChild(names)
-            })
-        }
-        getAllPokemons()
+    async function getAllCharacters() {
+        const response = await fetch(url)
+        console.log(response)
+
+        const data = await response.json()
+        console.log(data)
+        data.results.forEach((info) => {
+                const div = document.createElement('div')
+                const img = document.createElement('img')
+                const nome = document.createElement('h2')
+                const created = document.createElement('p')
+                const status = document.createElement('p')
+                const species = document.createElement('p')
+                const type = document.createElement('p')
+                const gender = document.createElement('p')
+                const origin = document.createElement('p')
+                const location = document.createElement('p')
+                const link = document.createElement('a')
+
+                img.setAttribute('src',info.image)
+                img.classList.add('img')
+
+                created.innerText = info.created
+                nome.innerText = info.name
+                status.innerText = info.status
+                species.innerText = info.species
+                type.innerText = info.type
+                gender.innerText = info.gender
+                origin.innerText = info.origin.name
+                location.innerText = info.location.name
+
+                link.setAttribute('href', '#')
+                link.innerText = 'Saiba Mais'
+
+                link.addEventListener('click',() => {
+                    div.appendChild(created)
+                    div.appendChild(status)
+                    div.appendChild(species)
+                    div.appendChild(type)
+                    div.appendChild(gender)
+                    div.appendChild(origin)
+                    div.appendChild(location)
+                })
+                div.appendChild(img)
+                div.appendChild(nome)
+                div.appendChild(link)
+                document.body.appendChild(div)
+        })
+    }
+        getAllCharacters()
 
     </script>
 </body>
